@@ -1,0 +1,17 @@
+<% if @user.errors.present? %>
+  <p>
+    <%= @user.errors.full_messages.join(', ')%>
+  </p>
+<% end %>
+
+<%= form_with model: @user, local:true do |f| %>
+  <div class='form-group'>
+    <%= f.label :update_name %>
+    <%= f.password_field(:update_name, class: 'form-control')%>
+  </div>
+  <div class='form-group'>
+    <%= f.label :update_email %>
+    <%= f.password_field(:update_email, class: 'form-control')%>
+  </div>
+  <%= f.submit "Edit Profile", class: 'btn btn-primary' %>
+<% end %>
